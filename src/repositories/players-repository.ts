@@ -47,3 +47,9 @@ export const findPlayerById = async (
         player
     ) => player.id === id);
 }
+
+export const insertPlayer = (
+    player: IPlayerModel
+) => {
+    database.push(player);
+}
