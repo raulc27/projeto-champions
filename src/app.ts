@@ -3,18 +3,13 @@ import express, {
     Response,
     json
 } from "express";
+import router from './routes';
 
 function createApp() {
     const app = express();
 
     app.use(json());
-
-    app.get("/", (
-        req: Request,
-        res: Response
-    ) => {
-        res.send("Hello World!");
-    });
+    app.use("/", router);
 
     return app;
 }
